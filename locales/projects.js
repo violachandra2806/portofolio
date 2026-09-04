@@ -247,14 +247,14 @@ const projects = [
 ];
 
 const translations = [
-  ["Teman Pendukung Kesehatan Mental (MindMate)", "Konsep aplikasi dukungan kesehatan mental berbasis suara yang memungkinkan pengguna berinteraksi dengan teman virtual melalui suara, bukan teks. Saya membuat konsep serta merancang antarmuka dan pengalaman pengguna pada semester dua tahun 2023."],
-  ["Kalkulator Emisi Karbon (Emi2C)", "Aplikasi web untuk membantu pengguna menghitung emisi karbon dari aktivitas transportasi seperti jenis kendaraan, jenis bahan bakar, dan jarak perjalanan. Saya mengembangkan website, antarmuka, database, dan fungsi backend pada semester empat tahun 2024."],
-  ["Jenius Academy", "Platform pembelajaran online tempat siswa dapat mengeksplorasi berbagai mata pelajaran dan mengakses kursus gratis maupun berbayar. Saya merancang dan mengembangkan antarmuka yang sederhana dan mudah digunakan pada semester tiga tahun 2023."],
-  ["Protoathon (B-Thrive)", "Konsep aplikasi untuk siswa yang mengalami kecemasan atau kesulitan berkonsentrasi di kelas yang ramai. Konsep ini mencakup dukungan chat dengan teman, penjadwalan psikolog, dan check-in emosi harian yang dirancang di Figma untuk kompetisi Protoathon 2024."],
-  ["CodePlot", "Antarmuka chat bertenaga AI yang membantu programmer Python memahami dan menyelesaikan error. Saya mengembangkan front end, back end, dan pengalaman chat untuk kompetisi hackathon tahun 2024."],
-  ["Klasifikasi Gambar AI - Deteksi Jenis Kulit", "Proyek machine learning yang mengklasifikasikan gambar kulit manusia menjadi kategori berminyak, kering, atau normal. Saya melatih dan menguji model beberapa kali menggunakan Google Colab dan Torchvision pada semester lima tahun 2024."],
-  ["Aplikasi Pemeriksaan Pasien Jarak Jauh & Telehealth", "Aplikasi telehealth berbasis Android yang mendukung pemeriksaan pasien di rumah, sinkronisasi data medis secara real-time dari perangkat ke dokter, serta konsultasi jarak jauh melalui video call dan Zoom. Saya mengerjakan komponen aplikasi mobile, backend, dan web sebagai full-stack developer."],
-  ["Platform Komunikasi Bahasa Isyarat", "Platform Android untuk skripsi yang menjembatani komunikasi antara komunitas tuli dan teman tuli dengan orang yang dapat mendengar dan berbicara. Saya mengembangkan frontend, backend, dan komponen AI, termasuk model pengenalan bahasa isyarat YOLOv8s yang menerjemahkan isyarat menjadi teks."],
+  ["Mental Health Support Companion (MindMate)", "Teman Pendukung Kesehatan Mental (MindMate)", "Konsep aplikasi dukungan kesehatan mental berbasis suara yang memungkinkan pengguna berinteraksi dengan teman virtual melalui suara, bukan teks. Saya membuat konsep serta merancang antarmuka dan pengalaman pengguna pada semester dua tahun 2023."],
+  ["Carbon Emission Calculator (Emi2C)", "Kalkulator Emisi Karbon (Emi2C)", "Aplikasi web untuk membantu pengguna menghitung emisi karbon dari aktivitas transportasi seperti jenis kendaraan, jenis bahan bakar, dan jarak perjalanan. Saya mengembangkan website, antarmuka, database, dan fungsi backend pada semester empat tahun 2024."],
+  ["Jenius Academy", "Jenius Academy", "Platform pembelajaran online tempat siswa dapat mengeksplorasi berbagai mata pelajaran dan mengakses kursus gratis maupun berbayar. Saya merancang dan mengembangkan antarmuka yang sederhana dan mudah digunakan pada semester tiga tahun 2023."],
+  ["Protoathon (B-Thrive)", "Protoathon (B-Thrive)", "Konsep aplikasi untuk siswa yang mengalami kecemasan atau kesulitan berkonsentrasi di kelas yang ramai. Konsep ini mencakup dukungan chat dengan teman, penjadwalan psikolog, dan check-in emosi harian yang dirancang di Figma untuk kompetisi Protoathon 2024."],
+  ["CodePlot", "CodePlot", "Antarmuka chat bertenaga AI yang membantu programmer Python memahami dan menyelesaikan error. Saya mengembangkan front end, back end, dan pengalaman chat untuk kompetisi hackathon tahun 2024."],
+  ["AI Image Classification - Skin Type Detection", "Klasifikasi Gambar AI - Deteksi Jenis Kulit", "Proyek machine learning yang mengklasifikasikan gambar kulit manusia menjadi kategori berminyak, kering, atau normal. Saya melatih dan menguji model beberapa kali menggunakan Google Colab dan Torchvision pada semester lima tahun 2024."],
+  ["Remote Patient Examination & Telehealth Application", "Aplikasi Pemeriksaan Pasien Jarak Jauh & Telehealth", "Aplikasi telehealth berbasis Android yang mendukung pemeriksaan pasien di rumah, sinkronisasi data medis secara real-time dari perangkat ke dokter, serta konsultasi jarak jauh melalui video call dan Zoom. Saya mengerjakan komponen aplikasi mobile, backend, dan web sebagai full-stack developer."],
+  ["Sign Language Communication Platform", "Platform Komunikasi Bahasa Isyarat", "Platform Android untuk skripsi yang menjembatani komunikasi antara komunitas tuli dan teman tuli dengan orang yang dapat mendengar dan berbicara. Saya mengembangkan frontend, backend, dan komponen AI, termasuk model pengenalan bahasa isyarat YOLOv8s yang menerjemahkan isyarat menjadi teks."],
 ];
 
 export const sortProjectsByOrder = (projectList) => [...projectList].sort((firstProject, secondProject) => firstProject.order - secondProject.order);
@@ -264,7 +264,8 @@ const orderedProjects = sortProjectsByOrder(projects);
 export const projectData = {
   en: orderedProjects,
   id: orderedProjects.map((project) => {
-    const translationIndex = project.order - 1;
-    return { ...project, title: translations[translationIndex][0], description: translations[translationIndex][1] };
+    const translation = translations.find(([englishTitle]) => englishTitle === project.title);
+    if (!translation) return project;
+    return { ...project, title: translation[1], description: translation[2] };
   }),
 };
