@@ -65,7 +65,7 @@ export default function ContactSection() {
           />
         ))}
       </Box>
-      <Container sx={{ position: "relative", zIndex: 1, width: "min(1180px, calc(100% - 56px))", margin: "0 auto", transform: "translateY(-24px)", "@media (max-width: 640px)": { transform: "translateY(-14px)" } }}>
+      <Container sx={{ position: "relative", zIndex: 1, width: "min(1180px, calc(100% - 56px))", margin: "0 auto", transform: "translateY(-24px)", "@media (max-width: 900px)": { transform: "translateY(-14px)" } }}>
         <Box sx={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
           <Typography component="p" sx={{ margin: "0 0 16px", color: "#8f5665", textTransform: "uppercase", letterSpacing: ".18em", fontSize: "var(--font-size-nav)", fontWeight: "var(--weight-bold)" }}>{t("contact_label")}</Typography>
           <Typography component="h2" sx={{ margin: 0, maxWidth: 760, color: "#8f5665", fontSize: "clamp(3rem, 5vw, 5.8rem)", lineHeight: .96, letterSpacing: "-.06em" }}>{t("contact_title")}</Typography>

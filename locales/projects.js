@@ -54,7 +54,7 @@ export const projectCategoryStyles = {
   personal: { label: "PERSONAL PROJECT", color: "var(--primary-strong)", background: "var(--badge-bg)", border: "var(--badge-border)" },
 };
 
-const projects = [
+const projects = [ 
   {
     order: 8,
     category: "personal",

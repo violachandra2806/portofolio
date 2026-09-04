@@ -50,9 +50,9 @@ export default function AboutSection({ locale }) {
       role="button"
       tabIndex={0}
     >
-      <Box sx={{ display: "flex", justifyContent: "space-between", gap: 1.75, marginBottom: 1.5, "@media (max-width: 640px)": { flexDirection: "column", gap: .5 } }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", gap: 1.75, marginBottom: 1.5, "@media (max-width: 900px)": { flexDirection: "column", gap: .5 } }}>
         <Typography component="span" sx={{ color: "var(--primary-strong)", fontSize: "var(--font-size-xs)", fontWeight: "var(--weight-bold)", letterSpacing: ".06em", textTransform: "uppercase" }}>{localized(entry.period, locale)}</Typography>
-        <Typography component="span" sx={{ color: "var(--muted)", fontSize: "var(--font-size-xs)", textAlign: "right", "@media (max-width: 640px)": { textAlign: "left" } }}>{localized(entry.location, locale)}</Typography>
+        <Typography component="span" sx={{ color: "var(--muted)", fontSize: "var(--font-size-xs)", textAlign: "right", "@media (max-width: 900px)": { textAlign: "left" } }}>{localized(entry.location, locale)}</Typography>
       </Box>
       <Typography component="h4">{localized(entry.title, locale)}</Typography>
       <Typography component="p" sx={{ margin: "6px 0 10px", color: entry.current ? "var(--accent-strong)" : "var(--muted)", fontWeight: "var(--weight-bold)" }}>{localized(entry.organization, locale)}</Typography>

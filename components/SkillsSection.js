@@ -97,10 +97,10 @@ export default function SkillsSection() {
               <Stack spacing={1}>
                 {skillGroups.map((group, groupIndex) => (
                   <Box key={group.key} sx={{ "--group-color": group.key === "languages" ? "var(--language-color)" : group.key === "frameworksLibraries" ? "var(--framework-color)" : group.key === "toolsPlatforms" ? "var(--tool-color)" : "var(--skill-color)" }}>
-                    <Typography component="h3" sx={{ margin: "0 0 16px", color: "var(--group-color)", fontSize: "var(--font-size-nav)", fontWeight: "var(--weight-bold)", letterSpacing: ".14em", textTransform: "uppercase", "@media (max-width: 640px)": { textAlign: "center" } }}>
+                    <Typography component="h3" sx={{ margin: "0 0 16px", color: "var(--group-color)", fontSize: "var(--font-size-nav)", fontWeight: "var(--weight-bold)", letterSpacing: ".14em", textTransform: "uppercase", "@media (max-width: 900px)": { textAlign: "center" } }}>
                       {t(`skills_category_${group.key}`)}
                     </Typography>
-                    <Box sx={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 1.25, padding: "2px", "@media (max-width: 640px)": { justifyContent: "center" } }}>
+                    <Box sx={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 1.25, padding: "2px", "@media (max-width: 900px)": { justifyContent: "center" } }}>
                       {group.items.map((skill) => {
                         return (
                           <Chip

@@ -4,6 +4,9 @@ import { themeVars } from "./themes/theme";
 export const metadata = {
   title: "Portofolio | Software Engineer",
   description: "Interactive portfolio website for a software engineer",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {

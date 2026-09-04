@@ -34,7 +34,7 @@ const fallingLeaves = Array.from({ length: 12 }, (_, index) => ({
   rotation: `${-35 + (index % 6) * 18}deg`,
 }));
 
-export default function HeroSection({ imageSrc }) {
+export default function HeroSection({ imageSrc, onNavigate }) {
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -108,14 +108,13 @@ export default function HeroSection({ imageSrc }) {
     <Box
       component="section"
       id="home"
-      sx={{ position: "relative", isolation: "isolate", minHeight: "calc(100vh - 78px)", boxSizing: "border-box", padding: "88px 0", display: "flex", alignItems: "center", scrollMarginTop: 78, opacity: 1, transform: "none", "@media (max-width: 640px)": { minHeight: "auto", padding: "54px 0 68px" } }}
+      sx={{ position: "relative", isolation: "isolate", minHeight: "calc(100vh - 78px)", boxSizing: "border-box", padding: "88px 0", display: "flex", alignItems: "center", scrollMarginTop: 78, opacity: 1, transform: "none", "@media (max-width: 900px)": { minHeight: "auto", padding: "54px 0 68px" } }}
       onPointerMove={updateBackgroundPosition}
-      onPointerDown={(event) => event.currentTarget.setPointerCapture?.(event.pointerId)}
       onPointerLeave={resetBackgroundPosition}
     >
       <Box sx={{ position: "absolute", inset: 0, zIndex: -2, pointerEvents: "none", background: "linear-gradient(135deg, var(--bg), var(--bg-soft))" }} aria-hidden="true" />
       <Box aria-hidden="true" sx={{ position: "absolute", top: 0, left: 0, zIndex: 0, width: 88, height: 88, pointerEvents: "none", border: "1px solid rgba(126, 166, 91, .28)", borderRadius: "50%", background: "radial-gradient(circle, rgba(126, 166, 91, .1), rgba(126, 166, 91, .035) 48%, transparent 72%)", boxShadow: "0 0 20px rgba(126, 166, 91, .14)", opacity: "var(--cursor-opacity, 0)", transform: "translate3d(calc(var(--cursor-x, -44px) - 44px), calc(var(--cursor-y, -44px) - 44px), 0)", transition: "opacity .25s ease" }} />
-      <Box sx={{ position: "absolute", inset: 0, zIndex: -1, overflow: "hidden", pointerEvents: "none", opacity: .9, maskImage: "linear-gradient(to bottom, #000 0%, #000 54%, rgba(0,0,0,.72) 78%, transparent 100%)", "@media (max-width: 640px)": { opacity: 0.55, "& .bamboo-stalk:nth-of-type(3n + 1)": { display: "none" } } }} aria-hidden="true">
+      <Box sx={{ position: "absolute", inset: 0, zIndex: -1, overflow: "hidden", pointerEvents: "none", opacity: .9, maskImage: "linear-gradient(to bottom, #000 0%, #000 54%, rgba(0,0,0,.72) 78%, transparent 100%)", "@media (max-width: 900px)": { opacity: 0.55, "& .bamboo-stalk:nth-of-type(3n + 1)": { display: "none" } } }} aria-hidden="true">
         {bambooStalks.map((stalk) => (
           <Box
             component="span"
@@ -184,15 +183,16 @@ export default function HeroSection({ imageSrc }) {
           </Typography>
           <Typography component="p" sx={{ maxWidth: 600, margin: "20px 0 0", color: "var(--muted)", fontSize: "var(--font-size-lead)" }}>{t("hero_lead")}</Typography>
 
-          <Stack direction="row" sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", gap: 1.75, marginTop: 3.75, "@media (max-width: 640px)": { justifyContent: "flex-end" } }}>
+          <Stack direction="row" sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", gap: 1.75, marginTop: 3.75, "@media (max-width: 900px)": { justifyContent: "flex-end" } }}>
             <Button
               component="a"
               href="#about"
+              onClick={(event) => onNavigate(event, "#about")}
               sx={{ minHeight: 52, padding: "0 22px", borderRadius: "999px", color: "var(--primary)", background: theme.white, border: 0, boxShadow: "0 10px 24px var(--glow)", "&:hover": { backgroundColor: theme.white, transform: "translateY(-2px)" } }}
             >
               {t("cta_about_me")}
             </Button>
-            <Button component="a" href="#projects" sx={{ minHeight: 52, padding: "0 22px", borderRadius: "999px", background: "linear-gradient(135deg, var(--gradient-start), var(--gradient-end))", color: "var(--white)", boxShadow: "0 16px 32px var(--glow)", transition: "transform .25s ease", "&:hover": { transform: "translateY(-2px)" } }}>
+            <Button component="a" href="#projects" onClick={(event) => onNavigate(event, "#projects")} sx={{ minHeight: 52, padding: "0 22px", borderRadius: "999px", background: "linear-gradient(135deg, var(--gradient-start), var(--gradient-end))", color: "var(--white)", boxShadow: "0 16px 32px var(--glow)", transition: "transform .25s ease", "&:hover": { transform: "translateY(-2px)" } }}>
               {t("cta_view_projects")}
             </Button>
           </Stack>
