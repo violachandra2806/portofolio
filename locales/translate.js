@@ -2,6 +2,12 @@ import { personalInfo } from "./information";
 
 export const defaultLocale = "en";
 
+let currentLocale = defaultLocale;
+
+export const setLocale = (locale = defaultLocale) => {
+  currentLocale = locale;
+};
+
 export const translations = {
   nav_home: { en: "Home", id: "Beranda" },
   nav_about: { en: "About", id: "Tentang" },
@@ -9,17 +15,14 @@ export const translations = {
   nav_projects: { en: "Projects", id: "Proyek" },
   nav_contact: { en: "Contact", id: "Kontak" },
   cta_lets_talk: { en: "Let's Talk", id: "Mari Bicara" },
-  cta_view_projects: { en: "View Projects", id: "Lihat Proyek" },
-  cta_about_me: { en: "About Me", id: "Tentang Saya" },
-  hero_eyebrow: { en: "I am a", id: "Saya seorang" },
+  cta_view_projects: { en: "Projects", id: "Proyek" },
+  cta_about_me: { en: "Learn more", id: "Pelajari lebih lanjut" },
+  hero_greeting: { en: "HELLO THERE! I AM", id: "HAI! PERKENALKAN SAYA" },
+  hero_eyebrow: { en: "AND I AM A", id: "DAN SAYA ADALAH SEORANG" },
   hero_lead: {
     en: "I'm a software engineer who turns ideas into polished web experiences, clean interfaces, and scalable systems that help businesses grow.",
     id: "Saya seorang software engineer yang mengubah ide menjadi pengalaman web yang halus, interface yang rapi, dan sistem yang scalable untuk membantu bisnis berkembang.",
   },
-  hero_years: { en: "Years", id: "Tahun" },
-  hero_years_value: { en: personalInfo.yearsExperience, id: personalInfo.yearsExperience },
-  hero_projects: { en: "Projects", id: "Proyek" },
-  hero_passion: { en: "Passion", id: "Semangat" },
   hero_roles: {
     en: [
       "Software Engineer",
@@ -51,15 +54,20 @@ export const translations = {
     en: "My process combines clean architecture, strong communication, and a practical eye for design. I care deeply about performance, clarity, and building experiences that help teams move faster and users stay engaged.",
     id: "Proses saya menggabungkan arsitektur yang bersih, komunikasi yang kuat, dan sudut pandang desain yang praktis. Saya sangat memperhatikan performa, kejelasan, dan pengalaman yang membantu tim bergerak lebih cepat serta pengguna tetap terlibat.",
   },
+  history_details: { en: "Details", id: "Detail" },
   skills_label: { en: "Skills", id: "Keahlian" },
   skills_title: {
-    en: "Tools, systems, and creative problem-solving.",
+    en: "Tools, Systems, and Creative Problem-Solving.",
     id: "Alat, sistem, dan pemecahan masalah secara kreatif.",
   }, 
-  skills_items: {
-    en: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "UI/UX", "REST APIs", "Cloud"],
-    id: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "UI/UX", "REST APIs", "Cloud"],
+  skills_text: {
+    en: "Technologies and technical skills I have developed through hands-on experience and applied to build practical solutions, solve complex problems, and create useful products.",
+    id: "Teknologi dan keterampilan teknis yang saya kembangkan melalui pengalaman langsung dan terapkan untuk membangun solusi yang praktis, menyelesaikan berbagai permasalahan, serta menciptakan produk yang bermanfaat.",
   },
+  skills_category_languages: { en: "Languages", id: "Bahasa" },
+  skills_category_frameworksLibraries: { en: "Frameworks & Libraries", id: "Framework & Library" },
+  skills_category_toolsPlatforms: { en: "Tools & Platforms", id: "Alat & Platform" },
+  skills_category_technologiesConcepts: { en: "Technologies / Concepts", id: "Teknologi / Konsep" },
   projects_label: { en: "Projects", id: "Proyek" },
   projects_title: {
     en: "Selected work with real product impact.",
@@ -115,10 +123,12 @@ export const translations = {
   profile_link_linkedin: { en: personalInfo.links.linkedin, id: personalInfo.links.linkedin },
   profile_link_instagram: { en: personalInfo.links.instagram, id: personalInfo.links.instagram },
   profile_link_github: { en: personalInfo.links.github, id: personalInfo.links.github },
-  profile_link_behance: { en: personalInfo.links.behance, id: personalInfo.links.behance },
-  profile_link_dribbble: { en: personalInfo.links.dribbble, id: personalInfo.links.dribbble },
 };
 
 export const getTranslation = (key, locale = defaultLocale) => {
   return translations[key]?.[locale] ?? translations[key]?.[defaultLocale] ?? "";
+};
+
+export const t = (key) => {
+  return getTranslation(key, currentLocale);
 };
