@@ -34,12 +34,12 @@ const fallingLeaves = Array.from({ length: 12 }, (_, index) => ({
   rotation: `${-35 + (index % 6) * 18}deg`,
 }));
 
-export default function HeroSection({ imageSrc, onNavigate }) {
+export default function HeroSection({ imageSrc, onNavigate, locale }) {
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const roles = t("hero_roles");
+  const roles = t("hero_roles", locale);
   const updateBackgroundPosition = (event) => {
     const section = event.currentTarget;
     const sectionBounds = section.getBoundingClientRect();
@@ -157,21 +157,21 @@ export default function HeroSection({ imageSrc, onNavigate }) {
               color: "var(--primary)",
             }}
           >
-            {t("hero_greeting")}
+            {t("hero_greeting", locale)}
           </Typography>
           <Typography
             component="h2"
             className="hero-name"
             sx={{ fontSize: "var(--font-size-hero-name)", fontWeight: "var(--weight-bold)" }}
           >
-            {t("profile_name")}
+            {t("profile_name", locale)}
           </Typography>
           <Typography
             component="p"
             className="eyebrow"
             sx={{ fontSize: "var(--font-size-hero-role-label)", fontWeight: "var(--weight-bold)" }}
           >
-            {t("hero_eyebrow")}
+            {t("hero_eyebrow", locale)}
           </Typography>
           <Typography
             component="h1"
@@ -181,7 +181,7 @@ export default function HeroSection({ imageSrc, onNavigate }) {
             <span>{text}</span>
             <span className="cursor">|</span>
           </Typography>
-          <Typography component="p" sx={{ maxWidth: 600, margin: "20px 0 0", color: "var(--muted)", fontSize: "var(--font-size-lead)" }}>{t("hero_lead")}</Typography>
+          <Typography component="p" sx={{ maxWidth: 600, margin: "20px 0 0", color: "var(--muted)", fontSize: "var(--font-size-lead)" }}>{t("hero_lead", locale)}</Typography>
 
           <Stack direction="row" sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", gap: 1.75, marginTop: 3.75, "@media (max-width: 900px)": { justifyContent: "flex-end" } }}>
             <Button
@@ -190,10 +190,10 @@ export default function HeroSection({ imageSrc, onNavigate }) {
               onClick={(event) => onNavigate(event, "#about")}
               sx={{ minHeight: 52, padding: "0 22px", borderRadius: "999px", color: "var(--primary)", background: theme.white, border: 0, boxShadow: "0 10px 24px var(--glow)", "&:hover": { backgroundColor: theme.white, transform: "translateY(-2px)" } }}
             >
-              {t("cta_about_me")}
+              {t("cta_about_me", locale)}
             </Button>
             <Button component="a" href="#projects" onClick={(event) => onNavigate(event, "#projects")} sx={{ minHeight: 52, padding: "0 22px", borderRadius: "999px", background: "linear-gradient(135deg, var(--gradient-start), var(--gradient-end))", color: "var(--white)", boxShadow: "0 16px 32px var(--glow)", transition: "transform .25s ease", "&:hover": { transform: "translateY(-2px)" } }}>
-              {t("cta_view_projects")}
+              {t("cta_view_projects", locale)}
             </Button>
           </Stack>
 

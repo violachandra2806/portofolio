@@ -106,9 +106,10 @@ export const translations = {
   contact_instagram: { en: "Instagram", id: "Instagram" },
   contact_github: { en: "GitHub", id: "GitHub" },
   footer_copyright: {
-    en: `© ${new Date().getFullYear()} ${personalInfo.name}. All Rights Reserved.`,
-    id: `© ${new Date().getFullYear()} ${personalInfo.name}. Semua Hak Dilindungi.`,
+    en: `© ${new Date().getFullYear()} ${personalInfo.name}`,
+    id: `© ${new Date().getFullYear()} ${personalInfo.name}`,
   },
+  footer_rights: { en: "All Rights Reserved.", id: "Semua Hak Dilindungi." },
   locale_label: { en: "Language", id: "Bahasa" },
   profile_name: { en: personalInfo.name, id: personalInfo.name },
   profile_age: { en: personalInfo.age, id: personalInfo.age },
@@ -129,6 +130,6 @@ export const getTranslation = (key, locale = defaultLocale) => {
   return translations[key]?.[locale] ?? translations[key]?.[defaultLocale] ?? "";
 };
 
-export const t = (key) => {
-  return getTranslation(key, currentLocale);
+export const t = (key, locale = currentLocale) => {
+  return getTranslation(key, locale);
 };

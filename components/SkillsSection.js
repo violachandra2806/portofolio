@@ -22,7 +22,7 @@ const rightSnowflakes = Array.from({ length: 20 }, (_, index) => ({
   rotation: `${30 - index * 12}deg`,
 }));
 
-export default function SkillsSection() {
+export default function SkillsSection({ locale }) {
   return (
     <Box component="section" id="skills" sx={{ position: "relative", isolation: "isolate", minHeight: "100vh", padding: "88px 0", background: "linear-gradient(180deg, #d9e8d5 0%, #c7dac8 18%, #b8cfbc 50%, #d9e8d5 84%, var(--bg) 100%)", scrollMarginTop: 96 }}>
       <Box aria-hidden="true" sx={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none", zIndex: 1, "@media (prefers-reduced-motion: reduce) .skills-snowflake": { animationPlayState: "paused" } }}>
@@ -87,9 +87,9 @@ export default function SkillsSection() {
       <Container sx={{ position: "relative", zIndex: 1, width: "min(1180px, calc(100% - 56px))", margin: "0 auto" }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1.08fr .92fr" }, alignItems: "center", gap: { xs: 5, md: 16 }, maxWidth: 1120, margin: "0 auto" }}>
           <Box sx={{ maxWidth: 500, justifySelf: "end", "@media (max-width: 900px)": { justifySelf: "center", textAlign: "center", maxWidth: 590 } }}>
-            <Typography component="p" sx={{ margin: "0 0 16px", color: "#e6f2df", textTransform: "uppercase", letterSpacing: "0.18em", fontSize: "var(--font-size-nav)", fontWeight: "var(--weight-bold)" }}>{t("skills_label")}</Typography>
-            <Typography component="h2" sx={{ margin: 0, color: "#f8fff6", fontSize: "clamp(3rem, 5vw, 5.4rem)", lineHeight: .94, letterSpacing: "-0.06em", fontFamily: "var(--font-display)" }}>{t("skills_title")}</Typography>
-            <Typography component="p" sx={{ maxWidth: 590, margin: "30px 0 0", color: "rgba(248, 255, 246, .82)", fontSize: "var(--font-size-lead)", lineHeight: 1.65 }}>{t("skills_text")}</Typography>
+            <Typography component="p" sx={{ margin: "0 0 16px", color: "#e6f2df", textTransform: "uppercase", letterSpacing: "0.18em", fontSize: "var(--font-size-nav)", fontWeight: "var(--weight-bold)" }}>{t("skills_label", locale)}</Typography>
+            <Typography component="h2" sx={{ margin: 0, color: "#f8fff6", fontSize: "clamp(3rem, 5vw, 5.4rem)", lineHeight: .94, letterSpacing: "-0.06em", fontFamily: "var(--font-display)" }}>{t("skills_title", locale)}</Typography>
+            <Typography component="p" sx={{ maxWidth: 590, margin: "30px 0 0", color: "rgba(248, 255, 246, .82)", fontSize: "var(--font-size-lead)", lineHeight: 1.65 }}>{t("skills_text", locale)}</Typography>
           </Box>
 
           <Card elevation={0} sx={{ padding: 2, border: "1px solid var(--line)", borderRadius: "28px", background: "linear-gradient(145deg, rgba(255,250,243,.92), rgba(238,246,225,.72))" }}>
@@ -98,7 +98,7 @@ export default function SkillsSection() {
                 {skillGroups.map((group, groupIndex) => (
                   <Box key={group.key} sx={{ "--group-color": group.key === "languages" ? "var(--language-color)" : group.key === "frameworksLibraries" ? "var(--framework-color)" : group.key === "toolsPlatforms" ? "var(--tool-color)" : "var(--skill-color)" }}>
                     <Typography component="h3" sx={{ margin: "0 0 16px", color: "var(--group-color)", fontSize: "var(--font-size-nav)", fontWeight: "var(--weight-bold)", letterSpacing: ".14em", textTransform: "uppercase", "@media (max-width: 900px)": { textAlign: "center" } }}>
-                      {t(`skills_category_${group.key}`)}
+                      {t(`skills_category_${group.key}`, locale)}
                     </Typography>
                     <Box sx={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 1.25, padding: "2px", "@media (max-width: 900px)": { justifyContent: "center" } }}>
                       {group.items.map((skill) => {

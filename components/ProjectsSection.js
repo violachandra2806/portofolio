@@ -11,6 +11,7 @@ import SectionHeader from "./SectionHeader";
 
 export default function ProjectsSection({ locale }) {
   const projects = projectData[locale] || projectData.en;
+  const getCategoryLabel = (category) => projectCategoryStyles[category]?.label?.[locale] || projectCategoryStyles.personal.label.en;
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const projectRailRef = useRef(null);
@@ -91,8 +92,8 @@ export default function ProjectsSection({ locale }) {
   return (
     <Box component="section" id="projects" sx={{ minHeight: "100vh", padding: { xs: "56px 0", sm: "88px 0" }, background: "linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 58%, #f6e8dc) 50%, #f6e8dc 100%)", scrollMarginTop: 96 }}>
       <SectionHeader
-        eyebrow={t("projects_label")}
-        title={t("projects_title")}
+        eyebrow={t("projects_label", locale)}
+        title={t("projects_title", locale)}
         align="center"
       />
 
@@ -106,7 +107,7 @@ export default function ProjectsSection({ locale }) {
             title={project.title}
             description={project.description}
             tags={project.tags}
-            badge={projectCategoryStyles[project.category]?.label || projectCategoryStyles.personal.label}
+            badge={getCategoryLabel(project.category)}
             badgeColor={project.category}
             image={project.preview}
             onOpen={() => openProject(project, 0)}

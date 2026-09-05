@@ -34,7 +34,7 @@ const fallingPetals = [
   { left: "97%", delay: "-20s", duration: "19s", drift: "36px", rotation: "36deg", scale: .7, color: "#f0c4ad" },
 ];
 
-export default function ContactSection() {
+export default function ContactSection({ locale }) {
   return (
     <Box component="section" id="contact" sx={{ position: "relative", display: "flex", alignItems: "center", boxSizing: "border-box", minHeight: "100vh", padding: "72px 0", overflow: "hidden", background: "linear-gradient(180deg, #f6e8dc 0%, #f6e8dc 12%, #f5e2dd 42%, #f4dce1 100%)", scrollMarginTop: 96 }}>
       <Box aria-hidden="true" sx={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden", pointerEvents: "none", "@media (prefers-reduced-motion: reduce) .contact-petal": { animationPlayState: "paused" } }}>
@@ -67,9 +67,9 @@ export default function ContactSection() {
       </Box>
       <Container sx={{ position: "relative", zIndex: 1, width: "min(1180px, calc(100% - 56px))", margin: "0 auto", transform: "translateY(-24px)", "@media (max-width: 900px)": { transform: "translateY(-14px)" } }}>
         <Box sx={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
-          <Typography component="p" sx={{ margin: "0 0 16px", color: "#8f5665", textTransform: "uppercase", letterSpacing: ".18em", fontSize: "var(--font-size-nav)", fontWeight: "var(--weight-bold)" }}>{t("contact_label")}</Typography>
-          <Typography component="h2" sx={{ margin: 0, maxWidth: 760, color: "#8f5665", fontSize: "clamp(3rem, 5vw, 5.8rem)", lineHeight: .96, letterSpacing: "-.06em" }}>{t("contact_title")}</Typography>
-          <Typography component="p" sx={{ maxWidth: 650, margin: "24px auto 0", color: "var(--muted)", fontSize: "var(--font-size-lead)", lineHeight: 1.65 }}>{t("contact_text")}</Typography>
+          <Typography component="p" sx={{ margin: "0 0 16px", color: "#8f5665", textTransform: "uppercase", letterSpacing: ".18em", fontSize: "var(--font-size-nav)", fontWeight: "var(--weight-bold)" }}>{t("contact_label", locale)}</Typography>
+          <Typography component="h2" sx={{ margin: 0, maxWidth: 760, color: "#8f5665", fontSize: "clamp(3rem, 5vw, 5.8rem)", lineHeight: .96, letterSpacing: "-.06em" }}>{t("contact_title", locale)}</Typography>
+          <Typography component="p" sx={{ maxWidth: 650, margin: "24px auto 0", color: "var(--muted)", fontSize: "var(--font-size-lead)", lineHeight: 1.65 }}>{t("contact_text", locale)}</Typography>
         </Box>
 
         <Stack direction="row" sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: { xs: 2.5, md: 4 }, margin: "58px auto 0", maxWidth: 900 }}>

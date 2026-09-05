@@ -46,17 +46,48 @@ import projectImage8_11 from "../src/image/portofolio_8/portofolio_8.11.png";
 import projectImage8_12 from "../src/image/portofolio_8/portofolio_8.12.png";
 import projectImage8Training from "../src/image/portofolio_8/training_output.png";
 import projectImage8Gantt from "../src/image/portofolio_8/gantt_chart.png";
+import projectImage9_1 from "../src/image/portofolio_9/portofolio_9.1.png";
+import projectImage9_2 from "../src/image/portofolio_9/portofolio_9.2.png";
+import projectImage9_3 from "../src/image/portofolio_9/portofolio_9.3.png";
+import projectImage9_4 from "../src/image/portofolio_9/portofolio_9.4.png";
+import projectImage10_1 from "../src/image/portofolio_10/portofolio_10.1.png";
+import projectImage10_2 from "../src/image/portofolio_10/portofolio_10.2.png";
 
 export const projectCategoryStyles = {
-  thesis: { label: "THESIS PROJECT", color: "#a85568", background: "rgba(237, 181, 189, .24)", border: "rgba(185, 111, 126, .4)" },
-  intern: { label: "INTERN PROJECT", color: "#9a6844", background: "rgba(242, 195, 139, .26)", border: "rgba(233, 178, 109, .44)" },
-  competition: { label: "COMPETITION", color: "#8c5b4b", background: "rgba(240, 179, 157, .25)", border: "rgba(228, 154, 165, .42)" },
-  personal: { label: "PERSONAL PROJECT", color: "var(--primary-strong)", background: "var(--badge-bg)", border: "var(--badge-border)" },
+  thesis: { label: { en: "THESIS PROJECT", id: "PROYEK SKRIPSI" }, color: "#a85568", background: "rgba(237, 181, 189, .24)", border: "rgba(185, 111, 126, .4)" },
+  intern: { label: { en: "INTERN PROJECT", id: "PROYEK MAGANG" }, color: "#9a6844", background: "rgba(242, 195, 139, .26)", border: "rgba(233, 178, 109, .44)" },
+  competition: { label: { en: "COMPETITION", id: "KOMPETISI" }, color: "#8c5b4b", background: "rgba(240, 179, 157, .25)", border: "rgba(228, 154, 165, .42)" },
+  professional: { label: { en: "PROFESSIONAL PROJECT", id: "PROYEK PROFESIONAL" }, color: "#4f7890", background: "rgba(157, 203, 220, .24)", border: "rgba(103, 160, 184, .42)" },
+  personal: { label: { en: "PERSONAL PROJECT", id: "PROYEK PRIBADI" }, color: "var(--primary-strong)", background: "var(--badge-bg)", border: "var(--badge-border)" },
 };
 
 const projects = [ 
   {
-    order: 8,
+    order: 1,
+    category: "professional",
+    title: "HR Attendance Management System",
+    description:
+      "A full-stack attendance management system I developed as an additional project outside the company's main project. Built for HR and administrators to monitor employee attendance, review check-in photos, dates, and times, and manage employee information. The system also supports password resets, registered device management, employee shift configuration, and employee account management. Each employee is restricted to a registered device to help maintain reliable attendance records. Role: Full-Stack Developer.",
+    tags: ["Python", "Next.js", "MySQL", "Postman", "Git"],
+    preview: projectImage9_1.src,
+    gallery: [projectImage9_4.src, projectImage9_3.src, projectImage9_2.src, projectImage9_1.src],
+    links: [],
+  },
+
+  {
+    order: 2,
+    category: "professional",
+    title: "Employee Attendance App",
+    description:
+      "A full-stack employee attendance application I developed alongside the company's main project. Employees can check in and check out while the application records the date and time of every attendance action. To improve accuracy and prevent unauthorized check-ins, the application verifies the employee's location and requires a connection to the company's registered office Wi-Fi. Role: Full-Stack Developer.",
+    tags: ["Python", "Next.js", "MySQL", "Postman", "Git"],
+    preview: projectImage10_1.src,
+    gallery: [projectImage10_2.src, projectImage10_1.src],
+    links: [],
+  },
+
+  {
+    order: 10,
     category: "personal",
     title: "Mental Health Support Companion (MindMate)",
     description:
@@ -79,7 +110,7 @@ const projects = [
   },
 
   {
-    order: 6,
+    order: 8,
     category: "personal",
     title: "Carbon Emission Calculator (Emi2C)",
     description:
@@ -105,7 +136,7 @@ const projects = [
   },
 
   {
-    order: 7,
+    order: 9,
     category: "personal",
     title: "Jenius Academy",
     description:
@@ -133,7 +164,7 @@ const projects = [
   },
 
   {
-    order: 4,
+    order: 6,
     category: "competition",
     title: "Protoathon (B-Thrive)",
     description:
@@ -160,7 +191,7 @@ const projects = [
   },
 
   {
-    order: 3,
+    order: 5,
     category: "competition",
     title: "CodePlot",
     description:
@@ -177,7 +208,7 @@ const projects = [
   },
 
   {
-    order: 5,
+    order: 7,
     category: "personal",
     title: "AI Image Classification - Skin Type Detection",
     description:
@@ -194,7 +225,7 @@ const projects = [
   },
 
   {
-    order: 2,
+    order: 4,
     category: "intern",
     title: "Remote Patient Examination & Telehealth Application",
     description:
@@ -206,7 +237,7 @@ const projects = [
   },
 
   {
-    order: 1,
+    order: 3,
     category: "thesis",
     title: "Sign Language Communication Platform",
     description:
@@ -247,6 +278,8 @@ const projects = [
 ];
 
 const translations = [
+  ["HR Attendance Management System", "Sistem Manajemen Kehadiran HR", "Sistem manajemen kehadiran full-stack yang saya kembangkan sebagai proyek tambahan di luar proyek utama perusahaan. Sistem ini dibuat untuk HR dan administrator untuk memantau kehadiran karyawan, melihat foto, tanggal, dan waktu check-in, serta mengelola informasi karyawan. Sistem ini juga mendukung reset password, pengelolaan ID perangkat terdaftar, pengaturan shift, dan penambahan atau pembaruan akun karyawan. Setiap karyawan dibatasi pada perangkat yang telah terdaftar untuk membantu menjaga keandalan data kehadiran. Peran: Full-Stack Developer."],
+  ["Employee Attendance App", "Aplikasi Kehadiran Karyawan", "Aplikasi kehadiran karyawan full-stack yang saya kembangkan bersama proyek utama perusahaan. Karyawan dapat melakukan check-in dan check-out, sementara aplikasi mencatat tanggal dan waktu setiap aktivitas kehadiran. Untuk meningkatkan akurasi dan mencegah check-in yang tidak sah, aplikasi memverifikasi lokasi karyawan dan mengharuskan perangkat terhubung ke Wi-Fi kantor yang telah terdaftar. Peran: Full-Stack Developer."],
   ["Mental Health Support Companion (MindMate)", "Teman Pendukung Kesehatan Mental (MindMate)", "Konsep aplikasi dukungan kesehatan mental berbasis suara yang memungkinkan pengguna berinteraksi dengan teman virtual melalui suara, bukan teks. Saya membuat konsep serta merancang antarmuka dan pengalaman pengguna pada semester dua tahun 2023."],
   ["Carbon Emission Calculator (Emi2C)", "Kalkulator Emisi Karbon (Emi2C)", "Aplikasi web untuk membantu pengguna menghitung emisi karbon dari aktivitas transportasi seperti jenis kendaraan, jenis bahan bakar, dan jarak perjalanan. Saya mengembangkan website, antarmuka, database, dan fungsi backend pada semester empat tahun 2024."],
   ["Jenius Academy", "Jenius Academy", "Platform pembelajaran online tempat siswa dapat mengeksplorasi berbagai mata pelajaran dan mengakses kursus gratis maupun berbayar. Saya merancang dan mengembangkan antarmuka yang sederhana dan mudah digunakan pada semester tiga tahun 2023."],

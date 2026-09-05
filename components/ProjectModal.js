@@ -12,6 +12,7 @@ import { projectCategoryStyles } from "../locales/projects";
 
 export default function ProjectModal({
   project,
+  locale,
   activeImageIndex,
   onClose,
   onNext,
@@ -132,7 +133,7 @@ export default function ProjectModal({
           </Box>
 
           <Box sx={{ display: "flex", minWidth: 0, minHeight: 0, boxSizing: "border-box", flexDirection: "column", gap: 2.25, padding: { xs: "30px 64px 26px 24px", sm: "38px 72px 28px 32px" }, overflowY: "auto", scrollbarWidth: "thin" }}>
-            <Chip label={badgePalette.label} size="small" sx={{ alignSelf: "flex-start", borderRadius: "999px", background: badgePalette.background, border: `1px solid ${badgePalette.border}`, color: badgePalette.color, fontSize: "var(--font-size-xs)", letterSpacing: "0.12em", textTransform: "uppercase" }} />
+            <Chip label={badgePalette.label[locale] || badgePalette.label.en} size="small" sx={{ alignSelf: "flex-start", borderRadius: "999px", background: badgePalette.background, border: `1px solid ${badgePalette.border}`, color: badgePalette.color, fontSize: "var(--font-size-xs)", letterSpacing: "0.12em", textTransform: "uppercase" }} />
             <Typography component="h3" sx={{ margin: 0, color: "var(--text)", fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1 }}>{project.title}</Typography>
             <Typography component="p" sx={{ margin: 0, color: "var(--muted)" }}>{project.description}</Typography>
             <Stack direction="row" sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>

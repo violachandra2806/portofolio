@@ -57,7 +57,7 @@ export default function AboutSection({ locale }) {
       <Typography component="h4">{localized(entry.title, locale)}</Typography>
       <Typography component="p" sx={{ margin: "6px 0 10px", color: entry.current ? "var(--accent-strong)" : "var(--muted)", fontWeight: "var(--weight-bold)" }}>{localized(entry.organization, locale)}</Typography>
       <Typography component="p" className="history-summary" sx={{ margin: 0, color: "var(--muted)", fontSize: "var(--font-size-detail)", lineHeight: 1.5 }}>{localized(entry.summary, locale)}</Typography>
-      <Box component="span" sx={{ position: "absolute", right: 22, bottom: 18, display: "inline-flex", alignItems: "center", gap: .75, color: "var(--primary)", fontSize: "var(--font-size-xs)", fontWeight: "var(--weight-bold)", letterSpacing: ".08em", textTransform: "uppercase", transition: "gap .2s ease", "&:hover": { gap: 1.25 } }}>{t("history_details")} <ArrowForward sx={{ fontSize: 17 }} aria-hidden="true" /></Box>
+      <Box component="span" sx={{ position: "absolute", right: 22, bottom: 18, display: "inline-flex", alignItems: "center", gap: .75, color: "var(--primary)", fontSize: "var(--font-size-xs)", fontWeight: "var(--weight-bold)", letterSpacing: ".08em", textTransform: "uppercase", transition: "gap .2s ease", "&:hover": { gap: 1.25 } }}>{t("history_details", locale)} <ArrowForward sx={{ fontSize: 17 }} aria-hidden="true" /></Box>
     </Paper>
     </Box>
   );

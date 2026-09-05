@@ -36,7 +36,7 @@ export default function HomePage() {
   useEffect(() => {
     const savedLocale = window.localStorage.getItem(LOCALE_STORAGE_KEY);
     if (savedLocale === "en" || savedLocale === "id") {
-      setPageLocale(savedLocale);
+      window.setTimeout(() => setPageLocale(savedLocale), 0);
     }
   }, []);
 
@@ -46,11 +46,11 @@ export default function HomePage() {
   }, [locale]);
 
   const navItems = [
-    { label: t("nav_home"), href: "#home" },
-    { label: t("nav_about"), href: "#about" },
-    { label: t("nav_skills"), href: "#skills" },
-    { label: t("nav_projects"), href: "#projects" },
-    { label: t("nav_contact"), href: "#contact" },
+    { label: t("nav_home", locale), href: "#home" },
+    { label: t("nav_about", locale), href: "#about" },
+    { label: t("nav_skills", locale), href: "#skills" },
+    { label: t("nav_projects", locale), href: "#projects" },
+    { label: t("nav_contact", locale), href: "#contact" },
   ];
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function HomePage() {
       <Box component="header" sx={{ position: "sticky", top: 0, zIndex: 40, backdropFilter: "blur(14px)", background: "rgba(247, 243, 234, 0.72)", borderBottom: "1px solid var(--line)" }}>
         <Container component="nav" sx={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", minHeight: 78, gap: 2.5, width: "min(1180px, calc(100% - 32px))", margin: "0 auto", "& > :last-child": { justifySelf: "end" }, "@media (max-width: 900px)": { display: "flex", justifyContent: "center", flexWrap: "wrap", padding: "14px 0 16px", minHeight: 66 } }} aria-label="Main navigation">
           <Link component="a" href="#home" onClick={(event) => scrollToSection(event, "#home")} sx={{ display: "inline-flex", alignItems: "center", minHeight: 42, color: "var(--text)", fontWeight: "var(--weight-extra-bold)", fontSize: "var(--font-size-xs)", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", cursor: "pointer", whiteSpace: "nowrap" }} aria-label="Go to home">
-            {[...t("profile_name")].map((char, index) => (
+            {[...t("profile_name", locale)].map((char, index) => (
               <Box
                 component="span"
                 key={`${char}-${index}`}
@@ -97,26 +97,25 @@ export default function HomePage() {
 
           <Stack direction="row" sx={{ display: "flex", alignItems: "center", gap: 1.75 }}>
             <LocaleSelector
-              label={t("locale_label")}
               value={locale}
               onChange={setPageLocale}
             />
-            <Button component="a" href="#contact" onClick={(event) => scrollToSection(event, "#contact")} sx={{ minHeight: 42, padding: "0 18px", borderRadius: "999px", textTransform: "none", fontWeight: "var(--weight-bold)", background: "linear-gradient(135deg, var(--gradient-start), var(--gradient-end))", color: "var(--white)", boxShadow: "0 16px 32px var(--glow)", "&:hover": { transform: "translateY(-2px)" }, "@media (max-width: 900px)": { display: "none" } }}>
-              {t("cta_lets_talk")}
+            <Button component="a" href="#contact" onClick={(event) => scrollToSection(event, "#contact")} sx={{ minHeight: 42, minWidth: 112, padding: "0 18px", borderRadius: "999px", textTransform: "none", fontWeight: "var(--weight-bold)", display: "inline-flex", alignItems: "center", justifyContent: "center", textAlign: "center", lineHeight: 1, background: "linear-gradient(135deg, var(--gradient-start), var(--gradient-end))", color: "var(--white)", boxShadow: "0 16px 32px var(--glow)", "&:hover": { transform: "translateY(-2px)" }, "@media (max-width: 900px)": { display: "none" } }}>
+              {t("cta_lets_talk", locale)}
             </Button>
           </Stack>
         </Container> 
       </Box>
 
       <Box component="main" sx={{ overflow: "hidden" }}>
-        <HeroSection imageSrc={imageSrc} onNavigate={scrollToSection} />
+        <HeroSection imageSrc={imageSrc} onNavigate={scrollToSection} locale={locale} />
         <AboutSection locale={locale} />
         <SkillsSection locale={locale} />
         <ProjectsSection locale={locale} />
         <ContactSection locale={locale} />
       </Box>
 
-      <Footer text={t("footer_copyright")} />
+      <Footer text={t("footer_copyright", locale)} rights={t("footer_rights", locale)} />
     </ThemeProvider>
   );
 }
