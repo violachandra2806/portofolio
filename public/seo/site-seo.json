@@ -1,0 +1,90 @@
+{
+  "metadataBaseUrl": "https://example.com",
+  "siteName": "Viola Yennalis Chandra",
+  "applicationName": "Viola Yennalis Chandra Portfolio",
+  "title": "Viola Yennalis Chandra | Software Engineer Portfolio",
+  "titleTemplate": "%s | Viola Yennalis Chandra",
+  "description": "Software engineer portfolio showcasing projects, experience, skills, and digital product work.",
+  "keywords": [
+    "Viola Yennalis Chandra",
+    "portfolio",
+    "software engineer",
+    "nextjs portfolio",
+    "web developer",
+    "full stack developer",
+    "digital products"
+  ],
+  "author": {
+    "name": "Viola Yennalis Chandra",
+    "url": "https://example.com"
+  },
+  "authors": [
+    {
+      "name": "Viola Yennalis Chandra",
+      "url": "https://example.com"
+    }
+  ],
+  "publisher": "Viola Yennalis Chandra",
+  "creator": "Viola Yennalis Chandra",
+  "robots": {
+    "index": true,
+    "follow": true,
+    "noarchive": false,
+    "nosnippet": false,
+    "noimageindex": false,
+    "googleBot": {
+      "index": true,
+      "follow": true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  },
+  "verification": {
+    "google": "google6ac3bb4d4bed6c22.html",
+    "yandex": "yandex-site-verification-code-example",
+    "yahoo": "yahoo-site-verification-code-example",
+    "bing": "bing-site-verification-code-example",
+    "baidu": "baidu-site-verification-code-example",
+    "other": {
+      "facebook-domain-verification": "facebook-domain-code-example",
+      "pinterest-rich-pin": "pinterest-pin-code-example"
+    }
+  },
+  "alternates": {
+    "canonical": "https://example.com",
+    "languages": {
+      "en": "https://example.com/en",
+      "id": "https://example.com/id"
+    }
+  },
+  "openGraph": {
+    "title": "Viola Yennalis Chandra | Software Engineer Portfolio",
+    "description": "Software engineer portfolio showcasing projects, experience, skills, and digital product work.",
+    "url": "https://example.com",
+    "siteName": "Viola Yennalis Chandra",
+    "type": "website",
+    "locale": "en_US",
+    "images": [
+      {
+        "url": "/og-image.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Viola Yennalis Chandra Portfolio"
+      }
+    ]
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Viola Yennalis Chandra | Software Engineer Portfolio",
+    "description": "Software engineer portfolio showcasing projects, experience, skills, and digital product work.",
+    "site": "@violachandra",
+    "creator": "@violachandra",
+    "images": ["/og-image.png"]
+  },
+  "icons": {
+    "icon": "/portofolio/icon.svg",
+    "shortcut": "/portofolio/icon.svg",
+    "apple": "/portofolio/icon.svg"
+  }
+}
