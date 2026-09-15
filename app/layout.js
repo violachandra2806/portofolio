@@ -1,11 +1,26 @@
 import { themeVars } from "./themes/theme";
+import siteSeo from "../public/seo/site-seo.json";
 // import backgroundImage from "../src/image/jelly.jpg";
 
 export const metadata = {
-  title: "Portofolio | Software Engineer",
-  description: "Interactive portfolio website for a software engineer",
+  metadataBase: new URL(siteSeo.metadataBaseUrl),
+  title: {
+    default: siteSeo.title,
+    template: siteSeo.titleTemplate,
+  },
+  description: siteSeo.description,
+  keywords: siteSeo.keywords,
+  authors: siteSeo.authors,
+  creator: siteSeo.creator,
+  publisher: siteSeo.publisher,
+  robots: siteSeo.robots,
+  alternates: siteSeo.alternates,
+  openGraph: siteSeo.openGraph,
+  twitter: siteSeo.twitter,
   icons: {
-    icon: "/portofolio/icon.svg",
+    icon: "/portofolio/favicon.ico",
+    shortcut: "/portofolio/favicon.ico",
+    apple: "/portofolio/favicon.ico",
   },
 };
 

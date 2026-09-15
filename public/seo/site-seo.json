@@ -1,10 +1,10 @@
 {
-  "metadataBaseUrl": "https://example.com",
+  "metadataBaseUrl": "https://violachandra2806.github.io/portofolio",
   "siteName": "Viola Yennalis Chandra",
   "applicationName": "Viola Yennalis Chandra Portfolio",
-  "title": "Viola Yennalis Chandra | Software Engineer Portfolio",
+  "title": "Portfolio | Viola Yennalis Chandra",
   "titleTemplate": "%s | Viola Yennalis Chandra",
-  "description": "Software engineer portfolio showcasing projects, experience, skills, and digital product work.",
+  "description": "Software Engineer and Full-Stack Developer specializing in Next.js, React, Python, Flask, and MySQL.",
   "keywords": [
     "Viola Yennalis Chandra",
     "portfolio",
@@ -16,12 +16,12 @@
   ],
   "author": {
     "name": "Viola Yennalis Chandra",
-    "url": "https://example.com"
+    "url": "https://violachandra2806.github.io/portofolio"
   },
   "authors": [
     {
       "name": "Viola Yennalis Chandra",
-      "url": "https://example.com"
+      "url": "https://violachandra2806.github.io/portofolio"
     }
   ],
   "publisher": "Viola Yennalis Chandra",
@@ -52,16 +52,16 @@
     }
   },
   "alternates": {
-    "canonical": "https://example.com",
+    "canonical": "https://violachandra2806.github.io/portofolio",
     "languages": {
-      "en": "https://example.com/en",
-      "id": "https://example.com/id"
+      "en": "https://violachandra2806.github.io/portofolio",
+      "id": "https://violachandra2806.github.io/portofolio"
     }
   },
   "openGraph": {
-    "title": "Viola Yennalis Chandra | Software Engineer Portfolio",
-    "description": "Software engineer portfolio showcasing projects, experience, skills, and digital product work.",
-    "url": "https://example.com",
+    "title": "Portfolio | Viola Yennalis Chandra",
+    "description": "Software Engineer and Full-Stack Developer specializing in Next.js, React, Python, Flask, and MySQL.",
+    "url": "https://violachandra2806.github.io/portofolio",
     "siteName": "Viola Yennalis Chandra",
     "type": "website",
     "locale": "en_US",
@@ -76,15 +76,15 @@
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Viola Yennalis Chandra | Software Engineer Portfolio",
-    "description": "Software engineer portfolio showcasing projects, experience, skills, and digital product work.",
+    "title": "Portfolio | Viola Yennalis Chandra",
+    "description": "Software Engineer and Full-Stack Developer specializing in Next.js, React, Python, Flask, and MySQL.",
     "site": "@violachandra",
     "creator": "@violachandra",
     "images": ["/og-image.png"]
   },
   "icons": {
-    "icon": "/portofolio/icon.svg",
-    "shortcut": "/portofolio/icon.svg",
-    "apple": "/portofolio/icon.svg"
+    "icon": "/portofolio/favicon.ico",
+    "shortcut": "/portofolio/favicon.ico",
+    "apple": "/portofolio/favicon.ico"
   }
 }
